@@ -29,4 +29,10 @@ NOTAS ===
 
 - Los selectores de jQuery están basados en CSS, pero van más allá.
 
-- 
+- Al igual que en CSS, entre menos complejos sean los selectores, más rápido se obtienen los resultados. Proveer contextos y apuntar a ids son formas de acelerar las selecciones, en el primer caso se reduce el campo de búsqueda, en el segundo una vez encuentra uno termina la búsqueda.
+
+- $("#app-header").find("h1") es más rápido que $("#app-header h1")
+
+- Las selecciones de jQuery no son dinámicas, es decir no se actualizan a medida que el DOM va cambiando.
+
+- Si se tiene una selección, los setters aplican a todos los elementos de la selección, pero los getters se aplicarán sólo al primer elemento

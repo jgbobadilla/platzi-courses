@@ -40,3 +40,33 @@ body {
   text-align: center;
   width: 60%;
 }
+
+.tv-show {
+  background-color: #fdfdfd;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 15px;
+  width: 100%;
+}
+.tv-show:hover {
+  background-color: #ecf0f1;
+  cursor: pointer;
+}
+.tv-show img {
+  max-width: 105px;
+  width: 100%;
+  height: auto;
+}
+.tv-show .info {
+  padding-left: 15px;
+}
+
+.left {
+  float: left;
+  width: 10%;
+}
+
+.right {
+  float: right;
+  width: 85%;
+}

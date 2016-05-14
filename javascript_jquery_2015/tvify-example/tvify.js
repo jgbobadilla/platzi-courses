@@ -9,4 +9,15 @@ $(function(){
   console.log(subHeaders);
 
   var title = $("h1", header[0]);    //Utiliza un elemento DOM como contexto para acelerar la búsqueda sobre sólo una parte de todo el árbol DOM. Se utiliza el objeto DOM para facilitar el trabajo, aunque un jQUeryObject también es válido
+
+  $("#app-header").find("h1");
+
+  var $createdA = $('<a>', {
+    "href": "http://platzi.com",
+    "title": "Ir a platzi",
+    "target": "_blank",
+    "html": "Visitar Platzi"
+  });
+
+  $("#app-body").append($createdA);
 });

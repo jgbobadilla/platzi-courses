@@ -2,10 +2,12 @@ $back-color: #bdc3c7;
 $header-back-color: #2ecc71;
 $border-color: #7f8c8d;
 $white: #fdfdfd;
+$hover-color: #ecf0f1;
 
 $main-font: Lato, Georgia;
 
 $baseline: 10vh;
+$content-baseline: 15px;
 
 body {
   background-color: $back-color;
@@ -50,4 +52,37 @@ body {
     text-align: center;
     width: 60%;
   }
+}
+
+.tv-show {
+  background-color: $white;
+  margin-bottom: $content-baseline;
+  overflow: hidden;
+  padding: $content-baseline;
+  width: 100%;
+
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 7 * $content-baseline;
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    padding-left: $content-baseline;
+  }
+}
+
+.left {
+  float: left;
+  width: 10%;
+}
+
+.right {
+  float: right;
+  width: 85%;
 }
