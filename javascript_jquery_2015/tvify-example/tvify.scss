@@ -1,6 +1,53 @@
 $back-color: #bdc3c7;
+$header-back-color: #2ecc71;
+$border-color: #7f8c8d;
+$white: #fdfdfd;
+
+$main-font: Lato, Georgia;
+
+$baseline: 10vh;
 
 body {
-	background-color: $back-color;
-	margin: 0;
+  background-color: $back-color;
+  font-family: $main-font;
+  margin: 0;
+}
+
+#app-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+#app-header {
+  background-color: $header-back-color;
+  height: $baseline;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+
+  h1 {
+    color: $white;
+    line-height: $baseline;
+    margin: 0;
+  }
+}
+
+#app-body {
+  margin: 0 auto;
+  min-height: 7.5 * $baseline;
+  padding-top: 1.5 * $baseline;
+  width: 80%;
+}
+
+#app-footer {
+  width: 100%;
+  min-height: $baseline;
+
+  p {
+    border-top: 1px solid $border-color;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+    width: 60%;
+  }
 }
