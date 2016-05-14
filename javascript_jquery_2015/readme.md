@@ -36,3 +36,12 @@ NOTAS ===
 - Las selecciones de jQuery no son dinámicas, es decir no se actualizan a medida que el DOM va cambiando.
 
 - Si se tiene una selección, los setters aplican a todos los elementos de la selección, pero los getters se aplicarán sólo al primer elemento
+
+- Un closure es una característica del lenguaje Javascript, que le permite hacer redifiniciones locales de variables o funciones globales.
+
+- Same Origin Policy es una definición que evita que un sitio web pueda hacerse pasar por otro. Consiste en que todos los requests tengan que hacerse desde el mismo dominio del script que se ejecuta. JSONP y CORS son dos estrategias para lograr superar este inconveniente.
+
+- Hoy día se puede acceder a muchas fuentes de datos a través de APIs, per ejemplo, TVMaze proporciona una API para acceder a datos de series de televisión. En google se pueden buscar.
+
+- Bootstrap es también tiene elementos de Javascript que permite elaborar sitios web responsive.
+
