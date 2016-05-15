@@ -86,3 +86,18 @@ body {
   float: right;
   width: 85%;
 }
+
+.search-form {
+  margin: $content-baseline auto;
+  display: block;
+  text-align: center
+  width: 50%;
+  font-size: 22px;
+
+  input {
+    padding: $content-baseline / 3 $content-baseline + 2;
+    border-radius: $content-baseline / 3;
+    min-width: 200px;
+    width: 80%;
+  }
+}

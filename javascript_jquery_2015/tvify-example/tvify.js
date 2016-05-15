@@ -1,23 +1,50 @@
 $(function(){
-  //VanillaJS
-  var vJSHeader = document.getElementById("app-header"); //Obtenemos por id, pero recorrer los hijos para buscar el h1 es más engorroso, y no se puede hace uso de métodos como GetElementsByTagName porque retornan todos los del documento y no de una porción de él. Éste es uno de los escenarios donde jQuery facilita la vida
+  
+  /**
+  *Submit search form
+  */
+  $("#app-body").find("form")
+    .submit(function (ev) {
+      ev.preventDefault();
+      var query = $(this)
+        .find('input[type="text"]')
+        .val();
+      alert("Está buscando por: " + query);
+    });
 
-  //jQuery
-  var header = $("#app-header");
-  console.log(header);
-  var subHeaders = $("h1 + h2");
-  console.log(subHeaders);
+  /**
+  *Load info
+  */
+  var template = '<article class="tv-show">' + 
+      '<div class="left img-container"><img src=":img:" alt=":img-alt:"></div>' +
+      '<div class="right info">' +
+        '<h2>:name:</h2>' +
+        '<p>:summary:</p>' +
+      '</div>' + 
+    '</article>';
 
-  var title = $("h1", header[0]);    //Utiliza un elemento DOM como contexto para acelerar la búsqueda sobre sólo una parte de todo el árbol DOM. Se utiliza el objeto DOM para facilitar el trabajo, aunque un jQUeryObject también es válido
+  $.ajax({
+    url: "http://api.tvmaze.com/shows",
+    success: function(shows, textStatus, jqXHR){
+      //se realizan dos mejoras: Una, se cacha el resultado de la búsqueda jQuery. Dos, para evitar el re-renderizado se llama una sola vez al append
+      var $showsContainer = $('#app-body').find(".tv-shows");
+      var showsHTML = '';
 
-  $("#app-header").find("h1");
+      shows.forEach(function(show){
+        var article = template
+          .replace(':name:', show.name)
+          .replace(':img:', show.image.medium)
+          .replace(':summary:', show.summary)
+          .replace(':img-alt:', show.name + "logo");
 
-  var $createdA = $('<a>', {
-    "href": "http://platzi.com",
-    "title": "Ir a platzi",
-    "target": "_blank",
-    "html": "Visitar Platzi"
+          showsHTML += article;
+      });
+
+      $showsContainer.append($(showsHTML));
+    },
+    fail: function(){
+      console.log('Failed to load data');
+    }
   });
 
-  $("#app-body").append($createdA);
 });
