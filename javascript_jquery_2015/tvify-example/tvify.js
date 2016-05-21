@@ -60,8 +60,9 @@ $(function(){
     });
 
   /**
-  *Load info
+  *Load info With callbacks (No Promises)
   */
+  /*
   $.ajax({
     url: "http://api.tvmaze.com/shows",
     success: function(shows, textStatus, jqXHR){
@@ -72,5 +73,15 @@ $(function(){
       console.log('Failed to load data');
     }
   });
+  */
+
+  /**
+  *Load info With Promises
+  */
+  $.ajax("http://api.tvmaze.com/shows")
+    .then(function(shows, textStatus, jqXHR){
+      renderShows(shows);
+      $loader.hide();
+    });
 
 });
