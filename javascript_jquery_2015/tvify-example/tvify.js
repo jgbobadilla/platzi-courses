@@ -25,6 +25,7 @@ $(function(){
     });
 
     $showsContainer.append($(showsHTML));
+    $loader.hide();
   }
   
   /**
@@ -50,7 +51,6 @@ $(function(){
             return qEl.show;
           });
 
-          $loader.hide();
           renderShows(qShows);
         },
         fail: function(){
@@ -78,10 +78,14 @@ $(function(){
   /**
   *Load info With Promises
   */
-  $.ajax("http://api.tvmaze.com/shows")
-    .then(function(shows, textStatus, jqXHR){
-      renderShows(shows);
-      $loader.hide();
-    });
+  if( !localStorage.shows ) {  
+    $.ajax("http://api.tvmaze.com/shows")
+      .then(function(shows, textStatus, jqXHR){
+        localStorage.shows = JSON.stringify(shows);
+        renderShows(shows);
+      });
+  } else {
+    renderShows( JSON.parse(localStorage.shows) );
+  }
 
 });

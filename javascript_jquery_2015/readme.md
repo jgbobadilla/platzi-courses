@@ -47,8 +47,10 @@ NOTAS ===
 
 - Cuando se tienen muchos callbacks anidados, la aplicación crece horizontalmente, un problema típico (Callback Hell) y que causa temas de ilegibilidad y aumento de complejidad. Una de las posibles soluciones son las "Promesas (Promises)"
 
-- Las versiones más recientes de jQuery ya han implementado el uso de Promesas, así se disponen de tres nuevos métodos: done, fail, error para el manejo de las promesas
+- Las versiones más recientes de jQuery ya han implementado el uso de Promesas, así se disponen de tres nuevos métodos: done, fail, error para el manejo de las promesas. Equivalentes a tres estados: pendientes, realizadas o con error.
 
 - then() se utiliza para encadenar callbacks.
 
 - fail() permite hacer manejo de error luego de que un bloque de promesas se ejecute.
+
+- LocalStorage es una característica de los navegadores que permite almacenar strings en un lugar particular del disco del usuario (Yendo más allá de las características de las cookies).
