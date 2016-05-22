@@ -4,11 +4,26 @@ $(function(){
       '<div class="right info">' +
         '<h2>:name:</h2>' +
         '<p>:summary:</p>' +
+        '<button class="like">&#x1F496; Like</button>' +
       '</div>' + 
     '</article>';
   
   var $showsContainer = $('#app-body').find(".tv-shows");
   var $loader = $showsContainer.find('.loader');
+
+  /**
+  *
+  */
+  $showsContainer.on('click', 'button.like', function(ev){
+    var $this = $(this);
+
+    //$this.parent().parent().addClass('liked');    //A simple strategy
+    /*$this.animate({
+      'fontSize': '30px'
+    }, 1200);*/
+
+    $this.closest('.tv-show').toggleClass('liked');
+  });
 
   function renderShows(shows){
     //se realizan dos mejoras: Una, se cacha el resultado de la búsqueda jQuery. Dos, para evitar el re-renderizado se llama una sola vez al append
@@ -24,7 +39,7 @@ $(function(){
       showsHTML += article;
     });
 
-    $showsContainer.append($(showsHTML));
+    $showsContainer.append($(showsHTML)).fadeIn(1600);
     $loader.hide();
   }
   

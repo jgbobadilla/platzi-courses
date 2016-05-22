@@ -4,6 +4,9 @@ $border-color: #7f8c8d;
 $white: #fdfdfd;
 $hover-color: #ecf0f1;
 
+$liked-color: #e08283;
+$liked-border-color: #f1a9a0;
+
 $main-font: Lato, Georgia;
 
 $baseline: 10vh;
@@ -26,6 +29,7 @@ body {
   position: fixed;
   text-align: center;
   width: 100%;
+  z-index: 10;
 
   h1 {
     color: $white;
@@ -59,6 +63,7 @@ body {
   margin-bottom: $content-baseline;
   overflow: hidden;
   padding: $content-baseline;
+  position: relative;
   width: 100%;
 
   &:hover {
@@ -74,6 +79,27 @@ body {
 
   .info {
     padding-left: $content-baseline;
+  }
+
+  .like {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 1s ease;    //Todas las propiedades, al cambiar generan una animación
+  }
+
+  &.liked {
+    background: $liked-color;
+    border: 2px solid $liked-border-color;
+
+    &:hover {
+      background: $liked-border-color;
+    }
   }
 }
 

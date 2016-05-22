@@ -54,3 +54,18 @@ NOTAS ===
 - fail() permite hacer manejo de error luego de que un bloque de promesas se ejecute.
 
 - LocalStorage es una característica de los navegadores que permite almacenar strings en un lugar particular del disco del usuario (Yendo más allá de las características de las cookies).
+
+- Para implementar AJAX/AJAJ existen librerías como visionmedia-superagent y github-fetch, alternativas a implementaciones con VanillaJS o jQuery.
+
+- Fetch está por convertirse en un estándar, por lo que vale la pena aprenderlo.
+
+- Selective.js: Sugerencias + tags en campos de texto.
+
+- Alternativas a AJAX: Socket.io (Web Sockets), que es más para actividades de tiempo real.
+
+- Firebase es una BD en tiempo real. Funciona con jQUery o Angular. 
+
+- En Javascript se puede hacer Scrapping, existen librerías para ello, algunas en node.js, aunque ojo, no siempre el scrapping es válido, y puede tener incidencias legales.
+
+- 
+
